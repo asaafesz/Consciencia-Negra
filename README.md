@@ -121,7 +121,7 @@ consciencia-negra/
 - `index.html`: contém a estrutura e os conteúdos da página.
 - `style.css`: contém os estilos visuais, cores, organização dos elementos e adaptações para diferentes tamanhos de tela.
 - `script.js`: controla os filtros, a busca, os recursos de acessibilidade, o quiz e o botão de voltar ao topo.
-- `images/`: armazena as imagens utilizadas no site.
+- `images`: armazena as imagens utilizadas no site.
 - `README.md`: apresenta a documentação e as informações do projeto.
 
 ---
