@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Página informativa sobre a Consciência Negra, com história, iniciativas de inclusão racial na tecnologia e um quiz interativo.">
+  <title>Consciência Negra | História, Resistência e Tecnologia</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+
+  <a class="pular-conteudo" href="#conteudo">Pular para o conteúdo principal</a>
+
+  <header class="cabecalho">
+    <div class="cabecalho__topo">
+      <h1 class="cabecalho__titulo">Consciência Negra</h1>
+
+
+      <div class="acessibilidade" role="group" aria-label="Opções de acessibilidade">
+        <button type="button" id="btn-diminuir" aria-label="Diminuir tamanho do texto">A-</button>
+        <button type="button" id="btn-aumentar" aria-label="Aumentar tamanho do texto">A+</button>
+        <button type="button" id="btn-contraste" aria-pressed="false">Alto contraste</button>
+      </div>
+    </div>
+
+    <nav class="menu" aria-label="Navegação principal">
+      <ul>
+        <li><a href="#historia">História</a></li>
+        <li><a href="#datas">Datas importantes</a></li>
+        <li><a href="#tecnologia">Inclusão na TI</a></li>
+        <li><a href="#quiz-secao">Quiz</a></li>
+        <li><a href="#transparencia-ia">Uso de IA</a></li>
+        <li><a href="#fontes">Fontes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo">
+
+
+    <section class="hero" aria-labelledby="titulo-hero">
+      <h2 id="titulo-hero">20 de novembro: dia de memória, resistência e luta por igualdade</h2>
+      <p>
+        O Dia da Consciência Negra convida o país a refletir sobre a contribuição da população negra
+        para a formação do Brasil e sobre o racismo que ainda marca a sociedade. Esta página reúne um
+        pouco dessa história e mostra iniciativas que trabalham para ampliar a presença de pessoas
+        negras na tecnologia.
+      </p>
+    </section>
+
+    <section id="historia" aria-labelledby="titulo-historia">
+      <h2 id="titulo-historia">Uma história de resistência</h2>
+
+      <article>
+        <h3>Zumbi e o Quilombo dos Palmares</h3>
+        <p>
+          O Quilombo dos Palmares, na Serra da Barriga (região do atual estado de Alagoas), foi um dos
+          maiores e mais duradouros espaços de resistência à escravidão nas Américas. Zumbi foi uma de
+          suas principais lideranças e morreu em 20 de novembro de 1695, data que deu origem ao Dia da
+          Consciência Negra.
+        </p>
+      </article>
+
+      <article>
+        <h3>Da abolição aos dias de hoje</h3>
+        <p>
+          A Lei Áurea, de 1888, encerrou formalmente a escravidão, mas não garantiu terra, trabalho,
+          educação ou direitos à população negra. Esse histórico ajuda a explicar desigualdades que
+          persistem, inclusive no acesso a carreiras como as da tecnologia.
+        </p>
+      </article>
+
+      <figure>
+        <img src="/images/abolicao.png" alt="" width="600" height="400" loading="lazy">
+        <figcaption>Legenda: A abolição da escravidão, em 13 de maio de 1888, marcou o fim legal do regime escravista, mas não significou a garantia de igualdade de direitos e oportunidades para a população negra.<br>
+        Crédito: Antônio Luiz Ferreira (fotógrafo). Acervo da Biblioteca Nacional, disponível na Brasiliana Fotográfica. Domínio público.</figcaption>
+      </figure>
+    </section>
+
+
+    <section id="datas" aria-labelledby="titulo-datas">
+      <h2 id="titulo-datas">Datas e marcos importantes</h2>
+      <ol class="linha-tempo">
+        <li>
+          <time datetime="1695-11-20">20 de novembro de 1695</time>
+          <p>Morte de Zumbi dos Palmares.</p>
+        </li>
+        <li>
+          <time datetime="1888-05-13">13 de maio de 1888</time>
+          <p>Assinatura da Lei Áurea.</p>
+        </li>
+        <li>
+          <time datetime="2003-01-09">2003</time>
+          <p>A Lei 10.639 torna obrigatório o ensino de história e cultura afro-brasileira nas escolas.</p>
+        </li>
+        <li>
+          <time datetime="2023-12-21">2023</time>
+          <p>A Lei 14.759 transforma o 20 de novembro em feriado nacional.</p>
+        </li>
+      </ol>
+      <p><small>Confira cada data e lei nas fontes oficiais antes de publicar.</small></p>
+    </section>
+
+
+    <section id="tecnologia" aria-labelledby="titulo-tecnologia">
+      <h2 id="titulo-tecnologia">Inclusão racial na tecnologia</h2>
+      <p>
+        Comunidades, ONGs e startups brasileiras trabalham para aumentar a entrada e a permanência de
+        pessoas negras na TI. Use a busca e os filtros para explorar.
+      </p>
+
+      <div class="ferramentas">
+        <form role="search" onsubmit="return false">
+          <label for="busca">Buscar iniciativa</label>
+          <input type="search" id="busca" name="busca" placeholder="Ex.: Python, startups, mulheres">
+        </form>
+
+        <div class="filtros" role="group" aria-label="Filtrar por categoria">
+          <button type="button" data-filtro="todos" aria-pressed="true">Todas</button>
+          <button type="button" data-filtro="ong" aria-pressed="false">ONGs</button>
+          <button type="button" data-filtro="comunidade" aria-pressed="false">Comunidades</button>
+          <button type="button" data-filtro="startup" aria-pressed="false">Startups</button>
+        </div>
+      </div>
+
+      <p id="contador-resultados" class="contador" aria-live="polite"></p>
+
+      <div id="lista-iniciativas" class="grade-cards"></div>
+    </section>
+
+
+    <section id="quiz-secao" aria-labelledby="titulo-quiz">
+      <h2 id="titulo-quiz">Teste seus conhecimentos</h2>
+      <div id="quiz"></div>
+    </section>
+
+
+    <section id="transparencia-ia" aria-labelledby="titulo-ia">
+      <h2 id="titulo-ia">Uso de inteligência artificial neste projeto</h2>
+      <p>
+        Este projeto foi desenvolvido com apoio do assistente de IA Claude, usado para gerar rascunhos
+        de código (HTML e JavaScript). O conteúdo histórico, as informações sobre as iniciativas e o
+        código final foram revisados, testados e conferidos em fontes confiáveis pelo(a) autor(a).
+      </p>
+    </section>
+
+
+    <section id="fontes" aria-labelledby="titulo-fontes">
+      <h2 id="titulo-fontes">Fontes consultadas</h2>
+      <ul>
+        <li><a href="#" target="_blank" rel="noopener noreferrer">https://www2.camara.leg.br/legin/fed/lei/2023/lei-14759-21-dezembro-2023-795091-publicacaooriginal-170522-pl.html</a></li>
+        <li><a href="#" target="_blank" rel="noopener noreferrer">https://afropython.gitbook.io/manual-do-organizador</a></li>
+        <li><a href="#" target="_blank" rel="noopener noreferrer">https://sistemas.intercom.org.br/pdf/submissao/nacional/17/06282024205804667f4e0c7ce37.pdf</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <aside class="lateral" aria-label="Para refletir">
+    <p>“Essa identidade negra não é uma coisa pronta, acabada. Então, para mim, uma pessoa negra que tem consciência de sua negritude está na luta contra o racismo.”</p>
+    <p><small>Lélia Gonzalez</small></p>
+  </aside>
+
+  <footer class="rodape">
+    <p>Projeto acadêmico sobre Consciência Negra e tecnologia.</p>
+    <p><small>Autor(a): Miguel Asafe & Pedro Arthur &middot; Turma/Disciplina: 2A TDS &middot; 2026</small></p>
+  </footer>
+
+  <button type="button" id="btn-topo" class="btn-topo" aria-label="Voltar ao topo" hidden>&uarr;</button>
+
+</body>
+</html>
